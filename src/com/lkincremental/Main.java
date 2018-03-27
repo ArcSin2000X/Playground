@@ -1,9 +1,7 @@
 package com.lkincremental;
 
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import org.apache.log4j.Logger;
 
 /*
 *
@@ -20,11 +18,13 @@ public class Main {
         System.out.println("Hello");
 
         TimerPlayground();
+
+        TimerPlayground();
     }
 
     private static void TimerPlayground(){
 
-        TimerTask timerTask = new MyTimerTask();
+        TimerTask timerTask = new MyTimerTask(DummyPublisher.getInstance());
 
         //running timer task as daemon thread
         Timer timer = new Timer(true);
