@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /*
-*
+*Console app that prints values on schedule
 *
 *
 *
@@ -18,15 +18,14 @@ public class Main {
         System.out.println("Hello");
 
         TimerPlayground();
-
-        TimerPlayground();
     }
 
     private static void TimerPlayground(){
 
         TimerTask timerTask = new MyTimerTask(DummyPublisher.getInstance());
 
-        //running timer task as daemon thread
+        //running timer task as daemon thread, wont exit on termination
+        //of the JVM
         Timer timer = new Timer(true);
 
         timer.scheduleAtFixedRate(timerTask,
@@ -40,11 +39,7 @@ public class Main {
         }
         timer.cancel();
         System.out.println("TimerTask cancelled");
-        try {
-            Thread.sleep(30000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
 }

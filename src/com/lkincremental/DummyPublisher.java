@@ -18,8 +18,10 @@ public class DummyPublisher {
     public void operation()
     {
         try {
-            //assuming it takes 0.2 secs to complete the task
-            Thread.sleep(1000 + getRandomTimeToWaste( 750 ));
+            long threadID = Thread.currentThread().getId();
+
+            Thread.sleep(1000 +
+                        getRandomTimeToWaste( 750 ));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

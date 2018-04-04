@@ -19,34 +19,4 @@ public class MyTimerTask extends TimerTask {
         System.out.println("Timer task finished at:"+new Date());
     }
 
-    private void completeTask() {
-        try {
-            //assuming it takes 0.2 secs to complete the task
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-//    public static void main(String args[]){
-//        TimerTask timerTask = new MyTimerTask();
-//        //running timer task as daemon thread
-//        Timer timer = new Timer(true);
-//        timer.scheduleAtFixedRate(timerTask, 0, 10*1000);
-//        System.out.println("TimerTask started");
-//        //cancel after sometime
-//        try {
-//            Thread.sleep(120000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        timer.cancel();
-//        System.out.println("TimerTask cancelled");
-//        try {
-//            Thread.sleep(30000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-// }
-
 }
