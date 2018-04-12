@@ -1,6 +1,6 @@
 package com.lkincremental.experiments;
 
- import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +60,13 @@ public class MyModel {
         persons.add(new Person("Jim", "Knopf"));
     }
 
-    private void notifyListeners(Object object, String property, String oldValue, String newValue) {
+    private void notifyListeners(Object object,
+                                 String property,
+                                 String oldValue,
+                                 String newValue) {
         for (PropertyChangeListener name : listener) {
-            name.propertyChange(new PropertyChangeEvent(this, property, oldValue, newValue));
+            name.propertyChange(new PropertyChangeEvent(this,
+                    property, oldValue, newValue));
         }
     }
 
