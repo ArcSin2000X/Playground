@@ -1,4 +1,4 @@
-package com.lkincremental;
+package com.lkincremental.perf;
 
 import java.util.Random;
 
